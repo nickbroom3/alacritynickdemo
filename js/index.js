@@ -19,8 +19,6 @@ function calcAverageAge(){
     for(age of ages){
         totalAge += age;
     }
-    console.log(ages);
-    console.log(totalAge);
     avgAge = totalAge / ages.length;
     return avgAge;
 }
@@ -42,7 +40,6 @@ function addPerson(){
     people.push(newPerson);
     ages.push(personAge);
     names.push(personName);
-    console.log(people);
     calculatePersonData();
     displayEmployeeDetails();
 }
@@ -60,10 +57,14 @@ function calculatePersonData(){
 
 }
 
+function showDetails(){
+    window.alert("More Details on user");
+}
+
 function displayEmployeeDetails(){
     document.getElementById("employeeDetails").innerHTML = "";
     for(person of people){
-        document.getElementById("employeeDetails").innerHTML += "<p> Name: " + person['name'] + ". Age: " + person['age'] + "</p>" ;
+        document.getElementById("employeeDetails").innerHTML += "<p> Name: " + person['name'] + ". Age: " + person['age'] + "  " + '<button type="button" class="btn btn-primary" onclick="showDetails()"> More Details </button> </p>';
     }
 }
 
